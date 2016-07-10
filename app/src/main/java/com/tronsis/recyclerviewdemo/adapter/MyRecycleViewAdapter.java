@@ -1,10 +1,12 @@
-package com.tronsis.recyclerviewdemo;
+package com.tronsis.recyclerviewdemo.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.tronsis.recyclerviewdemo.R;
 
 import java.util.List;
 

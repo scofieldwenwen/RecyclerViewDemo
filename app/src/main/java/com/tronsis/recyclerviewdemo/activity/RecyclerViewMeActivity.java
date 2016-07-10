@@ -1,9 +1,13 @@
-package com.tronsis.recyclerviewdemo;
+package com.tronsis.recyclerviewdemo.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.tronsis.recyclerviewdemo.adapter.MyRecycleViewAdapter;
+import com.tronsis.recyclerviewdemo.R;
+import com.tronsis.recyclerviewdemo.adapter.MyRecycleViewDivider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +17,7 @@ import java.util.List;
  * 2016-6-27 15:01:12
  * RecyclerView Demo
  */
-public class MainActivity extends AppCompatActivity {
+public class RecyclerViewMeActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
     private List<String> stringList = new ArrayList<>();
@@ -21,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recyclerview_me);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
         recyclerView.setHasFixedSize(true);
-        recyclerView.addItemDecoration(new RecycleViewDivider(this,LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new MyRecycleViewDivider(this,LinearLayoutManager.VERTICAL));
 //        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));//这里用线性宫格显示 类似于grid view
 //        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL));//这里用线性宫格显示 类似于瀑布流
 
